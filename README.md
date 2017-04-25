@@ -1,4 +1,5 @@
 # Method Object
+[![Build Status](https://travis-ci.org/LIQIDTechnology/methodobject.svg?branch=master)](https://travis-ci.org/LIQIDTechnology/methodobject)
 
 Allows for the creation of [method objects](https://sourcemaking.com/refactoring/replace-method-with-method-object),
 to ease the extraction of complex methods from other classes and the implementation of service objects.
