@@ -150,10 +150,11 @@ class MethodObject
   # Returns a hash with the parameters currently set.
   # @return [Hash{Symbol => Object}]
   def parameters
-    self.class.send(:parameters).map(&:name)
-        .select { |p| instance_variable_defined?("@#{p}") }
-        .map { |p| [p, public_send(p)] }
-        .to_h
+    Hash[
+      self.class.send(:parameters).map(&:name)
+          .select { |p| instance_variable_defined?("@#{p}") }
+          .map { |p| [p, public_send(p)] }
+    ]
   end
 
   # Calls the method object with the parameters currently set.
