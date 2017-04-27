@@ -11,9 +11,9 @@ a common pattern used to ease the extraction of complex methods from other class
 
 The __method object pattern__ is advisable when a method is too long and difficult to separate due to tangled masses of local variables that are hard to isolate from each other: the solution is to extract the entire method into a separate class and turn its local variables into fields of the class; this allows isolating the problem at the class level and it paves the way for splitting a large and unwieldy method into smaller ones that would not fit with the purpose of the original class anyway.
 
-This gem also provides a uniform interface to write __service objects__, that is a common way to extract common operations from models and controllers in Rails application. Borrowing the design from [an article](http://brewhouse.io/blog/2014/04/30/gourmet-service-objects.html) on what the author defines as _"Gourmet Service Object"_, it provides some plumbing to implement such a pattern, with objects that expose a operation as their entry-point.
+This gem also provides a uniform interface to write __service objects__, that is a common way to extract common operations from models and controllers in Rails application. Borrowing the design from [an article](http://brewhouse.io/blog/2014/04/30/gourmet-service-objects.html) on what the author defines as _"Gourmet Service Object"_, it provides some plumbing to implement such a pattern, with objects that expose an operation as their entry-point.
 
-The interface exposed by a MethodObject is similar to the one of a _proc_/_lambda_, exposing a `call` method both at class and instance level and a convenience `to_proc` method to convert it to a Proc. Other neat features include optional type checking for the arguments and inheritance between MO's.
+The interface exposed by a MethodObject is similar to the one of a _proc_/_lambda_, exposing a `call` method both at class and instance level and a convenience `to_proc` method to convert it to a Proc. Other neat features include optional type checking for the arguments and inheritance between method objects.
 
 ## Installation
 
@@ -38,7 +38,7 @@ Or install it yourself as:
 ```ruby
 class ComplexCalculation < MethodObject
   # Type checking is optional. If omitted, anything is accepted.
-  # Type checking can also done with a proc or anything that responds to #===
+  # Type checking can also be done with a proc or anything that responds to #===
   # e.g. parameter :start_number, ->(p) { p.respond_to?(:to_i) }
   parameter :start_number, Integer
 
