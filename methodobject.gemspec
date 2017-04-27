@@ -9,8 +9,13 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Michele Piccirillo"]
   spec.email         = ["michele@liqid.de"]
 
-  spec.summary       = 'Method Object pattern in Ruby'
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = 'Method Object pattern in Ruby for your service objects'
+  spec.description   = <<-EOF
+    Lightweight and dependency-free solution for the creation of method objects,
+    a common pattern used to ease the extraction of complex methods from other classes
+    and for the implementation of service objects.
+  EOF
+
   spec.homepage      = "https://github.com/LIQIDTechnology/methodobject"
   spec.license       = "MIT"
 
