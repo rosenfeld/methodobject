@@ -60,7 +60,7 @@ class ComplexCalculation < MethodObject
 
   def perform_complex_calculation
     # The arguments are available as accessors
-    start_number + second_number + @magic_number
+    start_number + end_number + @magic_number
   end
 end
 
